@@ -8,10 +8,3 @@ spec:
   - name: nginx
     image: nginx
 
-
-#Special Commands to use during geektinker session
-#kubectl -n victor exec --stdin --tty shell-demo -- /bin/bash
-#curl 10.24.3.254:8080
-# curl -H "Host:ridedott.com" http://35.195.176.32:30852
-#gcloud compute --project=pj-platform-dev firewall-rules create NAME --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:80,tcp:30852 --source-ranges=0.0.0.0/0
-#while true; do curl http://35.195.176.32/app ; sleep 1; done
