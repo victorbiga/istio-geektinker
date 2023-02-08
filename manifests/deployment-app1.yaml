@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  app1-deployment
+  namespace: victor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app1
+      version: v1
+  template:
+    metadata:
+      name:  app1-pod
+      labels:
+        app: app1
+        version: v1
+    spec:
+      containers:
+      - name: app1-container
+        image: victorbiga/service:1
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort:  8080
+      restartPolicy: Always

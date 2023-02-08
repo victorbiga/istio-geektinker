@@ -1,0 +1,19 @@
+# See more at https://istio.io/blog/2017/0.1-canary/
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: istio-virtual-svc
+  namespace: victor
+spec:
+  hosts:
+  - app1-svc.victor.svc.cluster.local
+  http:
+  - route:
+    - destination:
+        host: app1-svc.victor.svc.cluster.local
+        subset: app1-service-subset
+      weight: 80
+    - destination:
+        host: app2-svc.victor.svc.cluster.local
+        subset: app2-service-subset
+      weight: 20

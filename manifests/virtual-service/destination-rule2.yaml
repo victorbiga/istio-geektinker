@@ -1,0 +1,16 @@
+# See more at https://istio.io/docs/reference/config/networking/destination-rule/
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: istio-destination-rule2
+  namespace: victor
+spec:
+  host: app2-svc.victor.svc.cluster.local
+  subsets:
+  - name: app2-service-subset
+    labels:
+      app: app2
+      version: v2
+    trafficPolicy:
+      loadBalancer:
+        simple: ROUND_ROBIN
