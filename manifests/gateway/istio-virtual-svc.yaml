@@ -24,10 +24,10 @@ spec:
         port: 
           number: 8080
         subset: app1-service-subset
-      weight: 100
+      weight: 0
     - destination:
         host: app2-svc.victor.svc.cluster.local
         port: 
           number: 8080
         subset: app2-service-subset
-      weight: 0
+      weight: 100
