@@ -4,7 +4,7 @@ metadata:
   name:  app1-deployment
   namespace: victor
 spec:
-  replicas: 30
+  replicas: 1
   selector:
     matchLabels:
       app: app1
